@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BHHNRM2Q0P"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BHHNRM2Q0P');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Improbability Labs Inc. leverages High-Performance Computing (HPC) to address complex challenges across diverse sectors, driving innovation with a strong R&D foundation. Our commitment is towards creating impactful solutions for critical societal and strategic issues through advanced HPC technologies and research.">
+<meta name="keywords" content="High-Performance Computing, HPC, Improbability Labs, R&D, innovation, computational solutions, software development, data analysis, HPC development, prototype development, experimentation, advanced computing">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Improbability Labs Inc.">
+<meta property="og:description" content="Driving innovation with High-Performance Computing (HPC) to address industry challenges.">
+<meta property="og:image" content="https://improbability.io/improbability-labs.png">
+<meta property="og:url" content="https://improbability.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Improbability Labs Inc.">
+<meta name="twitter:description" content="Driving innovation with High-Performance Computing (HPC) to address industry challenges.">
+<meta name="twitter:image" content="https://improbability.io/improbability-labs.png">
+<link rel="canonical" href="https://improbability.io/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://improbability.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://improbability.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://improbability.io/favicon-16x16.png">
+<link rel="manifest" href="https://improbability.io/site.webmanifest">
+<title>Improbability Labs Inc.</title>
+<style>body{font-family:Arial,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;background-color:#f0f0f0;text-align:center}img{max-width:100%;height:auto}@media (max-width:768px){img{max-width:90%}}.company-info,.contact-form{margin:5px;max-width:600px;width:90%}form{display:flex;flex-direction:column;width:100%}input,textarea{font-family:Arial,sans-serif;font-size:16px;padding:10px;margin:5px 0;border-radius:5px;border:1px solid #ccc;width:calc(100% - 20px)}button{padding:10px;background-color:#5f3698;color:#fff;border:none;border-radius:5px;cursor:pointer;margin-top:5px}button:hover{background-color:#4c2b79}footer{margin-top:20px;font-size:.8rem;padding-bottom:20px}</style>
+</head>
+<body>
+<br>
+<img src="https://improbability.io/improbability-labs.webp" alt="Improbability Labs" width="423" height="422">
+<h1>Improbability Labs Inc.</h1>
+<div class="company-info">
+<p>Improbability Labs Inc. focuses on harnessing the power of High-Performance Computing (HPC) to tackle complex challenges that span a wide array of sectors, including societal and strategic domains. With a solid foundation in research and development (R&D), our mission is to drive innovation and develop groundbreaking technologies. We are committed to exploring the vast capabilities of HPC, with the goal of creating effective solutions for today’s most pressing issues.</p>
+</div>
+<div class="contact-form">
+<h2>Contact Us</h2>
+<form id="improbability-contact-form" action="https://formspree.io/f/mqkrbkqo" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Message" required></textarea>
+<button type="submit">Send</button>
+<p id="improbability-contact-status"></p>
+</form>
+</div>
+<footer>
+© 2024 Improbability Labs Inc. All rights reserved.
+</footer>
+</body>
+</html>
+<script>
+    var form = document.getElementById("improbability-contact-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("improbability-contact-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
